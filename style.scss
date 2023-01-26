@@ -75,7 +75,9 @@ body {
                         // @include flex-direction(column);
                         // @include justify-content(center)
 
-
+display: flex;
+justify-content: center;
+align-items: center;
                     }
 
                     .operation {
