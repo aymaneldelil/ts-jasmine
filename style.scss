@@ -1,0 +1,90 @@
+// @use './src/style/mixins';
+// @use './src/style/colors';
+// @use './src/style/variables';
+@import './src/style/colors';
+@import './src/style/mixins';
+@import './src/style/variables';
+
+* {
+    box-sizing: border-box;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------
+body {
+    background-color: $primaryColor;
+    position: relative;
+    height: 100vh;
+
+    .calculator {
+        background-color: $secColor;
+        max-width: 500px;
+        height: 400px;
+
+        position: relative;
+        top: 50%;
+        left: 50%;
+        // -----
+        transform: translate(-50%, -50%);
+        // -----
+        @include border-radius($size);
+
+        .container {
+            padding: calc($size *3);
+            height: 100%;
+
+            // display: flex;
+            // align-items: stretchs;
+            form {
+                .screen {
+                    input {
+                        width: 100%;
+                        height: calc($size *3);
+                        // -----
+                        @include border-radius($size);
+                    }
+
+                }
+
+                // ----------------------
+                .data {
+                    @include flexbox;
+                    // background-color: blueviolet;
+                    height: 100%;
+
+                    *>.btn {
+                        width: calc($size *6);
+                        height: calc($size *6);
+
+                        margin: calc($size /2) calc($size);
+
+                        border: none;
+                        @include border-radius($size);
+
+                        background-color: lighten($secColor, 20);
+                        transition: $transition;
+
+                        &:hover {
+                            background-color: white;
+                        }
+                    }
+
+                    .numbers {
+                        width: 70%;
+                        // background-color: orange;
+                        // @include display-flex;
+                        // @include flex-direction(column);
+                        // @include justify-content(center)
+
+
+                    }
+
+                    .operation {
+                        // background-color: red;
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+
+}
