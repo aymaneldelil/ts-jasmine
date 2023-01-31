@@ -1,32 +1,26 @@
 {
   "devDependencies": {
+    "@types/jasmine": "^4.3.1",
+    "jasmine": "^4.5.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.4.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.57.1",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
-    "typescript": "^4.9.4"
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "name": "unit-test",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test-watch": "jest --watch",
-    "build-ts-dev": "webpack --config webpack.config.dev.js",
-    "build-ts-watch": "webpack --watch --config webpack.config.dev.js",
-    "build-ts-prod": "webpack --config webpack.config.prod.js",
-    "build-scss-only": "sass src/scss:../Webresources/css",
-    "build-scss-dev": "npm-run-all lint-scss build-scss-only",
-    "build-scss-prod": "npm-run-all lint-scss \"build-scss-only -- --style=compressed\"",
-    "build-scss-watch": "npm-run-all \"build-scss-only -- --watch\"",
-    "build-dev": "npm-run-all --parallel build-ts-dev build-scss-dev",
-    "build-watch": "npm-run-all --parallel build-ts-watch build-scss-watch test-watch",
-    "build": "npm-run-all test --parallel build-ts-prod build-scss-prod",
-    "watch": "npm run build-watch",
-    "format-ts": "prettier ./src/code/**/* --write",
-    "lint-ts": "eslint ./src/code/**/* --fix",
-    "lint-scss": "stylelint src/scss/**/*.{scss,sass} --fix"
+    "test": "jasmine-ts --config=jasmine.json"
   },
   "keywords": [],
   "author": "",
